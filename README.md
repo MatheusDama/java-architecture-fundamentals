@@ -21,6 +21,8 @@ Este repositório consolida as práticas, laboratórios e desafios de código or
 ## 🎯 Diretrizes do Repositório
 * **Padrões de Mercado:** Versionamento guiado por boas práticas de engenharia, aplicando *Conventional Commits* e revisões de código.
 * **Organização Conceitual:** Divisão de diretórios por tópicos técnicos (e não por plataformas de ensino), otimizando a legibilidade para Tech Leads e recrutadores.
+* **Aprendizado e práticas limpas:** Limpeza e aplicação do conhecimento de forma sucinta, buscando
+resultado e aperfeiçoamento conforme meu desenvolvimento profissional.
 
 ## 📂 Navegação Rápida
 * 🗺️ [Painel Geral de Progresso (Checklist Completo)](./PROGRESSO.md) — Acompanhamento em tempo real dos módulos concluídos em ambas as frentes.
