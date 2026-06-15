@@ -1,21 +1,31 @@
 # 🗺️ Mapa de Progresso e Fontes de Estudo
 
-Este arquivo serve para rastrear o conteúdo absorvido e aplicado de ambas as plataformas de ensino durante o mês.
+Este arquivo serve para rastrear o conteúdo absorvido e aplicado de ambas as plataformas de ensino durante o mês das seguintes instituições e suas respectivas certificações:
+
+## 🎓 Instituições Parceiras & Certificações
+
+| Instituição | Selo / Badge | Certificado Oficial | Status |
+| :--- | :--- | :---: | :---: |
+| **DIO** | ![DIO](https://img.shields.io/badge/DIO-%230078D7.svg?style=for-the-badge&logo=dataCamp&logoColor=white) | *[Aguardando Conclusão]* | ⏳ Em Andamento |
+| **Oracle University** | ![Oracle](https://img.shields.io/badge/Oracle-%23F80000.svg?style=for-the-badge&logo=oracle&logoColor=white) | *[Aguardando Exame]* | ⏳ Em Andamento |
 
 ---
 
 ## ☕ 1. Bootcamp Santander 2026 - AI Java Back-end (DIO)
-* [ ] **Módulo 1:** Fundamentos Para Começar a Programar em Java
+* [x] **Módulo 1:** O Copilotos Com IA no Desenvolvimento de Solução
+  * *Status:* ✅ Finalizado
+  * *Prática gerada:* Em andamento
+* [ ] **Módulo 2:** Fundamentos Para Começar a Programar em Java
   * *Status:* ⏳ Em andamento (Foco atual)
   * *Prática gerada:* `01-fundamentos/PalavrasChave.md`
-* [ ] **Módulo 2:** Programando o Mundo Real com POO no Java
+* [ ] **Módulo 3:** Programando o Mundo Real com Orientação a Objetos no Java
   * *Status:* 🛑 Não iniciado
-* [ ] **Módulo 3:** Boas Práticas, Padrões e Dados no Java
+* [ ] **Módulo 4:** Boas Práticas, Padrões e Dados no Java
   * *Status:* 🛑 Não iniciado
 
 ---
 
-## 🏛️ 2. Oracle Java Foundations
+## 🏛️ 2. Oracle Java Foundations -EM ANDAMENTO-
 * [ ] **Section 1:** Introduction
   * *Status:* ⏳ Revisando conceitos iniciais
 * [ ] **Section 2:** Java Software Development
