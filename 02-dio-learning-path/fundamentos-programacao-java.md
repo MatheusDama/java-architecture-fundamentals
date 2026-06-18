@@ -20,6 +20,15 @@
 | `=` | Atribuição | Atribui valores para às variáveis |
 | `println` |
 | `isRight` * |
-| `==` |
+| `==` | Igualdade | Compara se a expressão é verdadeira ou falsa |
 
->  `IsRight` é um **método**: O qual são **blocos de código que executam uma tarefa específica apenas quando são chamados.** Sendo também referidos com **functions(funções)**, 
+>  `IsRight` é um **método**: O qual são **blocos de código que executam uma tarefa específica apenas quando são chamados.** Sendo também referidos com **functions(funções)**,
+
+### Java Keywords (palavra-chave Java)
+
+* **Java Keywords**: Java tem conjuntos de palavras-chaves em _java_ que **NÂO** podem ser usadas como variáveis são essas: _variable, methods, classes,_ ou nehum outro _identifiers_.
+
+>[!NOTE}
+>_true, false, e null_ não são **keywords**, mas são conhecidos como **literals** (literais) e **reserved** (reservados) que não podem ser usados como identificadores - REVISAR -
+
+### Operadores de Atribuição lógica
