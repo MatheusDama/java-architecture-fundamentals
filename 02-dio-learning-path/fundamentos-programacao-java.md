@@ -23,6 +23,8 @@
 | `==` | Igualdade | Compara se a expressão é `true` ou `false` |
 | `!=` | Diferente de | Compara se os valores são diferentes |
 | `!` | inversos | inverte o resultado de `true` para `false` em vice-versa |
+| `||` | OR | Considera apenas uma verdade |
+| `&&` | and |
 
 >  `IsRight` é um **método**: O qual são **blocos de código que executam uma tarefa específica apenas quando são chamados.** Sendo também referidos com **functions(funções)**, -ERRADO-
 
@@ -40,35 +42,54 @@ public class Main {
         var scanner = new Scanner(System.in);
 
         // --- ENTRADA DE DADOS ---
+
+        /* Exemplo utilizado em vídeo
         System.out.println("Quanto é 2 + 2? ");
         var result = scanner.nextInt();
 
-        /* * Exemplo alternativo de captura de dados (Idade):
-         * System.out.println("Quantos anos você tem?");
-         * var age = scanner.nextInt();
+         * * Exemplo alternativo de captura de dados (Idade):
          */
+
+        System.out.println("Quantos anos você tem?");
+        var age = scanner.nextInt();
+
+        System.out.println("Você é emancipado? ");
 
         // --- PROCESSAMENTO / LÓGICA BOOLEANA ---
-        
-        // Avalia a igualdade direta. Retorna 'true' se o resultado for igual a 4.
+
+        /* Avalia a igualdade direta. Retorna 'true' se o resultado for igual a 4.
         var isRight = result == 4;
 
-        /* * Abordagens alternativas de validação lógica:
+         * * Abordagens alternativas de validação lógica:
          * * 1. Desigualdade (!=): Verifica se o valor está incorreto (isWrong).
          * var isWrong = result != 4;
-         * * 2. Operador Relacional (>): Validação de maioridade.
-         * var canDrive = age >= 18; // Nota: No Brasil, o correto seria maior ou igual (>=)
          */
 
+        //2. Valida se o usuário é emancipado para dirigir
+        var isEmancipated = scanner.nextBoolean();
+
+        //3. Operador Relacional (>): Validação de maioridade.
+        var canDrive = age >= 18 || isEmancipated; // Nota: No Brasil, o correto seria maior ou igual (>=)
+
+        // --- NOTA MENTAL ---
+
+        /*
+        * O Java segue a chamada `Ordem de Execução`(ou fluxo sequêncial).
+        * Significando assim que o código precisa ser criado para ser utilizado, sempre de cima para baixo(Sequêncial)
+         */
+
+
         // --- SAÍDA DE DADOS FORMATADA ---
-        
-        // O placeholder '%s' atua como um alocador de string para injetar o valor booleano dinamicamente.
+
+        /* O placeholder '%s' atua como um alocador de string para injetar o valor booleano dinamicamente.
         System.out.printf("O resultado é 4, você acertou? (%s)\n", isRight);
 
-        /* * Exemplo de exibição usando o operador de inversão/negação (!):
+         * Exemplo de exibição usando o operador de inversão/negação (!):
          * Se 'isWrong' for false, '!isWrong' se torna true.
          * System.out.printf("O resultado é 4, você acertou? (%s)\n", !isWrong);
          */
+
+        System.out.printf("Você pode dirigir? (%s) \n", canDrive);
     }
 }
 ```
