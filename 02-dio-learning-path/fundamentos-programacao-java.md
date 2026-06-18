@@ -20,9 +20,74 @@
 | `=` | Atribuição | Atribui valores para às variáveis |
 | `println` |
 | `isRight` * |
-| `==` | Igualdade | Compara se a expressão é verdadeira ou falsa |
+| `==` | Igualdade | Compara se a expressão é `true` ou `false` |
+| `!=` | Diferente de | Compara se os valores são diferentes |
+| `!` | inversos | inverte o resultado de `true` para `false` em vice-versa |
 
->  `IsRight` é um **método**: O qual são **blocos de código que executam uma tarefa específica apenas quando são chamados.** Sendo também referidos com **functions(funções)**,
+>  `IsRight` é um **método**: O qual são **blocos de código que executam uma tarefa específica apenas quando são chamados.** Sendo também referidos com **functions(funções)**, -ERRADO-
+
+```java
+import java.util.Scanner;
+
+/**
+ * Classe principal para exercitar conceitos de captura de dados,
+ * operadores lógicos, relacionais e formatação de strings no Java.
+ */
+public class Main {
+
+    public static void main(String[] args) {
+
+        var scanner = new Scanner(System.in);
+
+        // --- ENTRADA DE DADOS ---
+        System.out.println("Quanto é 2 + 2? ");
+        var result = scanner.nextInt();
+
+        /* * Exemplo alternativo de captura de dados (Idade):
+         * System.out.println("Quantos anos você tem?");
+         * var age = scanner.nextInt();
+         */
+
+        // --- PROCESSAMENTO / LÓGICA BOOLEANA ---
+        
+        // Avalia a igualdade direta. Retorna 'true' se o resultado for igual a 4.
+        var isRight = result == 4;
+
+        /* * Abordagens alternativas de validação lógica:
+         * * 1. Desigualdade (!=): Verifica se o valor está incorreto (isWrong).
+         * var isWrong = result != 4;
+         * * 2. Operador Relacional (>): Validação de maioridade.
+         * var canDrive = age >= 18; // Nota: No Brasil, o correto seria maior ou igual (>=)
+         */
+
+        // --- SAÍDA DE DADOS FORMATADA ---
+        
+        // O placeholder '%s' atua como um alocador de string para injetar o valor booleano dinamicamente.
+        System.out.printf("O resultado é 4, você acertou? (%s)\n", isRight);
+
+        /* * Exemplo de exibição usando o operador de inversão/negação (!):
+         * Se 'isWrong' for false, '!isWrong' se torna true.
+         * System.out.printf("O resultado é 4, você acertou? (%s)\n", !isWrong);
+         */
+    }
+}
+```
+
+<details>
+  <summary>Esse é o objetivo do isRight</summary>
+  nesta ordem:
+
+    Ele olha primeiro para o lado direito do sinal de igual (=): result == 4
+
+    Ele faz a pergunta (comparação): "O valor que está dentro de result é igual a 4?"
+
+    Ele gera um resultado lógico: * Se o usuário digitou 4, essa expressão vira true.
+
+        Se o usuário digitou qualquer outro número, vira false.
+
+    Ele guarda o resultado: Só agora o Java pega esse true ou false e joga para dentro da variável isRight.
+
+</details>
 
 ### Java Keywords (palavra-chave Java)
 
