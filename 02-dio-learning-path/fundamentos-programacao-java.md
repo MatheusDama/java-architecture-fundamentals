@@ -15,18 +15,26 @@
 
 ### Trabalho com Operadores de Atribuição e Lógicos
 
-| Operador | Nome | Função |
-| :--- | :--- | :--- |
-| `=` | Atribuição | Atribui valores para às variáveis |
-| `println` |
-| `isRight` * |
-| `==` | Igualdade | Compara se a expressão é `true` ou `false` |
-| `!=` | Diferente de | Compara se os valores são diferentes |
-| `!` | inversos | inverte o resultado de `true` para `false` em vice-versa |
-| `||` | OR | Considera apenas uma verdade |
-| `&&` | and |
-| `/` | division | divide elementos |
-| `%` | porcentage |
+### Trabalho com Operadores de Atribuição, Aritméticos, Lógicos e de Bits
+
+| Operador / Sintaxe | Nome Técnico | Função / Explicação | Exemplo de Uso |
+| :---: | :--- | :--- | :--- |
+| `=` | Atribuição Simples | Guarda o valor da direita dentro da variável da esquerda. | `x = 10` (x passa a valer 10) |
+| `==` | Igualdade | Compara se dois valores são iguais. Retorna `true` ou `false`. | `5 == 5` (Resulta em `true`) |
+| `!=` | Diferente de | Compara se dois valores são distintos. Retorna `true` se forem diferentes. | `5 != 3` (Resulta in `true`) |
+| `!` | Negação Lógica (NOT) | Inverte o estado lógico de um booleano (`true` vira `false` e vice-versa). | `!true` (Resulta em `false`) |
+| `\|\|` | Disjunção Lógica (OR) | Retorna `true` se **pelo menos uma** das condições for verdadeira. | `true \|\| false` (Resulta em `true`) |
+| `&&` | Conjunção Lógica (AND) | Retorna `true` **apenas se todas** as condições forem verdadeiras. | `true && false` (Resulta em `false`) |
+| `^` | OU Exclusivo (XOR) | Retorna `true` se as condições forem **diferentes**. Se forem iguais, resulta em `false`. | `true ^ true` (Resulta em `false`) |
+| `/` | Divisão | Divide o dividendo pelo divisor. Em divisões inteiras, descarta as casas decimais. | `10 / 2` (Resulta em `5`) |
+| `%` | Módulo (Resto da Divisão) | Retorna o **resto** que sobra de uma divisão inteira. | `7 % 2` (Resulta em `1`, pois 7 = 3*2 + **1**) |
+| `<<` | Deslocamento à Esquerda (Left Shift) | Move os bits para a esquerda e preenche os vazios com `0`. Multiplica o número por $2^n$. | `3 << 1` (O binário `0011` vira `0110`, que é `6`) |
+| `>>` | Deslocamento à Direita (Right Shift) | Move os bits para a direita (dividindo por $2^n$). Preserva o bit de sinal (0 para positivo, 1 para negativo). | `8 >> 1` (O binário `1000` vira `0100`, que é `4`) |
+| `>>>` | Deslocamento à Direita Sem Sinal (Logical Shift) | Move os bits para a direita e preenche sempre com `0` na esquerda, ignorando o sinal. | `-8 >>> 1` (Resulta em `2147483644`) |
+| `println()` | Função de Saída / Impressão | Escreve uma mensagem ou o valor de uma variável no terminal (consola) e pula uma linha. | `println("Olá, Mundo!")` |
+| `isRight` | Identificador (Variável/Função) * | Não é um operador. É um nome comum usado para variáveis booleanas (ex: `let isRight = true`). | `if (isRight) { ... }` |
+
+*\* Nota: `isRight` e `println` são elementos de sintaxe/funções e não operadores propriamente ditos, mas estão incluídos para fins de documentação do código.*
 
 
 >  `IsRight` é um **método**: O qual são **blocos de código que executam uma tarefa específica apenas quando são chamados.** Sendo também referidos com **functions(funções)**, -ERRADO-
