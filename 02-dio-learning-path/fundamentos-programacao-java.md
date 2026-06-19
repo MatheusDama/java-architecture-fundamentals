@@ -146,36 +146,86 @@ public class Main {
 Exemplos em Vídeos
 
 ```java
-import java.util.Scanner;
+public class Main3 {
 
-public class Main2 {
+    public static void main(String[] args){
 
-    public static void main(String[] args) {
-        // -- ENTRADA DE DADOS --
+        // -- CONVERSÃO DE BASES (DECIMAL PARA BINÁRIO) --
 
-        // O **new Scanner** faz a leitura e a transformação dos dados vindos do **System.in**, 
-        // que por sua vez intercepta os dados inseridos via teclado.
-        var scanner = new Scanner(System.in);
+        // Declaração de um número inteiro decimal tradicional.
+        int value1 = 6;
 
-        // O **System.out** sai com uma mensagem que é exibida pelo terminal usando **println**, 
-        // que printa o texto e faz um _line-break_ (quebra de linha).
-        System.out.println("Informe o primeiro número: ");
+        // O método **Integer.toBinaryString** recebe o número inteiro e o converte
+        // em uma String que representa o seu valor em formato binário (base 2).
+        var binary1 = Integer.toBinaryString(value1);
 
-        // O scanner processa a entrada do terminal e armazena o valor na variável 'value1'.
-        var value1 = scanner.nextInt();
-        
-        // Mesmo processo da primeira variável, resultando em um segundo valor de entrada.
-        System.out.println("Informe o segundo número: ");
-        var value2 = scanner.nextInt();
-        
+        // O **printf** exibe o texto formatado. Aqui usamos **%d** para o número inteiro (value1)
+        // e **%s** para a String binária (binary1), evitando erros de tipo de dado.
+        System.out.printf("Primeiro número da operação %d (representação binária %s)\n", value1, binary1);
+
+        // Repetição do processo de conversão para o segundo número da operação.
+        var value2 = 5;
+        var binary2 = Integer.toBinaryString(value2);
+        System.out.printf("Segundo número da operação %d (representação binária %s)\n", value2, binary2);
+
+        // -- PROCESSAMENTO DA OPERAÇÃO BITWISE --
+
+        var resultLeft = value1 << value2;
+        var binaryResultLeft = Integer.toBinaryString(resultLeft);
+
+        var resultRight = value1 >> value2;
+        var binaryResultRight = Integer.toBinaryString(resultRight);
+
+        // O caractere | representa o operador OR (OU) bitwise.
+        // Se pelo menos um dos bits comparados for 1, o bit resultante será 1.
+        /* Exemplo visual:
+           110 (6)
+         | 101 (5)
+         ------
+           111 (Resultado: 7) */
+        var resultOR = value1 | value2;
+        var binaryOR = Integer.toBinaryString(resultOR);
+
+        // O caractere & representa o operador AND (E) bitwise.
+        // Ambos os bits comparados precisam ser 1 para o bit resultante ser 1.
+        /* Exemplo visual:
+           110 (6)
+         & 101 (5)
+         ------
+           100 (Resultado: 4) */
+        var resultAND = value1 & value2;
+        var binaryAND = Integer.toBinaryString(resultAND);
+
+        // O caractere ^ representa o operador XOR (OU Exclusivo) bitwise.
+        // Os bits comparados precisam ser diferentes para o bit resultante ser 1.
+        /* Exemplo visual:
+           110 (6)
+         ^ 101 (5)
+         ------
+           011 (Resultado: 3) */
+        var resultXOR = value1 ^ value2;
+        var binaryXOR = Integer.toBinaryString(resultXOR);
+
+        // O caractere ~ representa o operador NOT (Inversão) bitwise.
+        // Ele é unário (atua em um número) e inverte todos os bits (0 vira 1, 1 vira 0).
+        // Por inverter os 32 bits do 'int' (incluindo o sinal), o resultado segue a regra: ~(x) = -(x + 1).
+        /* Exemplo visual:
+         ~ 00000000000000000000000000000110 (6)
+         ----------------------------------
+           11111111111111111111111111111001 (Resultado: -7) */
+
+        var resultNOT = ~value1;
+        var binaryNOT = Integer.toBinaryString(resultNOT);
+
         // -- SAÍDA DE DADOS --
-        
-        // O **printf** faz a exibição formatada usando os %d (place-holders para números), 
-        // que recebem os valores declarados sequencialmente após a vírgula.
-        System.out.printf("%d + %d = %d\n", value1, value2, value1 + value2);
 
-        // Boa prática: fecha o fluxo de leitura após o uso.
-        scanner.close();
+        System.out.printf("%d << %d = %d  (representação Left shift-operator Binary %s) \n", value1, value2, resultLeft, binaryResultLeft);
+        System.out.printf("%d >> %d = %d  (representação Right shift-operator Binary %s) \n", value1, value2, resultRight, binaryResultRight);
+        System.out.printf("%d | %d = %d (representação OR Binary %s)\n", value1, value2, resultOR, binaryOR);
+        System.out.printf("%d & %d = %d (representação AND %s)\n", value1, value2, resultAND, binaryAND);
+        System.out.printf("%d ^ %d = %d (representação XOR %s)\n", value1, value2, resultXOR, binaryXOR);
+        System.out.printf("~%d = %d (representação NOT %s)\n", value1, resultNOT, binaryNOT);
+
     }
 }
 ```
