@@ -189,6 +189,8 @@ public class Main2 {
 }
 ```
 
+---
+
 Exemplos em Vídeos
 
 ```java
