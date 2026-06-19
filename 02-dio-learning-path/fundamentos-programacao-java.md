@@ -143,6 +143,52 @@ public class Main {
 
 ### Operadores Aritméticos
 
+```
+import java.util.Scanner;
+
+public class Main2 {
+
+    public static void main(String[] args) {
+        // -- ENTRADA DE DADOS --
+
+        // O **new Scanner** faz a leitura e a transformação dos dados vindos do **System.in**,
+        // que por sua vez intercepta os dados inseridos via teclado.
+        var scanner = new Scanner(System.in);
+
+        // O **System.out** sai com uma mensagem que é exibida pelo terminal usando **println**,
+        // que printa o texto e faz um _line-break_ (quebra de linha).
+        System.out.println("Informe o primeiro número: ");
+
+        // O scanner processa a entrada do terminal e armazena o valor na variável 'value1'.
+        var value1 = scanner.nextInt();
+
+        // Mesmo processo da primeira variável, resultando em um segundo valor de entrada.
+        System.out.println("Informe o segundo número: ");
+        var value2 = scanner.nextInt();
+
+        // -- SAÍDA DE DADOS --
+
+        // O **printf** faz a exibição formatada usando os %d (place-holders para números),
+        /*que recebem os valores declarados sequencialmente após a vírgula.
+        System.out.printf("%d + %d = %d\n", value1, value2, value1 + value2);
+         */
+
+        System.out.printf("%d %% %d = %d\n", value1, value2, value1 % value2);
+
+        /*
+        * Exemplo de saída negativa dos valores informados.
+        * System.out.printf("%d + %d = %d\n", value 1, value 2, value 1 - value2);
+         */
+
+        // Boa prática: fecha o fluxo de leitura após o uso.
+        scanner.close();
+
+        // ---NOTA MENTAL--
+        //
+    }
+}
+```
+
 Exemplos em Vídeos
 
 ```java
