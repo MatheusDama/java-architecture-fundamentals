@@ -1,6 +1,3 @@
-/*
-Escreva um código que receba o nome e o ano de nascimento de alguém e imprima na tela a seguinte mensagem: "Olá 'Fulano' você tem 'X' anos"
-*/
 import java.util.Scanner;
 
 public class Name {
@@ -49,5 +46,3 @@ public class Name {
      seria adicionar 'scanner.close();' na última linha do método main.
  ==============================================================================
 */
-
----
