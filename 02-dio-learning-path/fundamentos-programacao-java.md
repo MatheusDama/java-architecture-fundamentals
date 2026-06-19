@@ -25,6 +25,9 @@
 | `!` | inversos | inverte o resultado de `true` para `false` em vice-versa |
 | `||` | OR | Considera apenas uma verdade |
 | `&&` | and |
+| `/` | division | divide elementos |
+| `%` | porcentage |
+
 
 >  `IsRight` é um **método**: O qual são **blocos de código que executam uma tarefa específica apenas quando são chamados.** Sendo também referidos com **functions(funções)**, -ERRADO-
 
