@@ -21,6 +21,9 @@ public class Name {
     }
 }
 
+//ESSE CÓDIGO CUMPRE A FINALIDADE DA ATIVIDADE.
+//Apenas são erros para auto-atenção e descobrimento do código para um futuros aperfeiçoamento do mesmo.
+
 /*
  ==============================================================================
  📝 NOTAS DE RODAPÉ (PONTOS DE ATENÇÃO E ERROS ENCONTRADOS NO CÓDIGO)
