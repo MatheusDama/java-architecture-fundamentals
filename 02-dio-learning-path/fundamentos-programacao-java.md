@@ -28,6 +28,17 @@
 
 >  `IsRight` é um **método**: O qual são **blocos de código que executam uma tarefa específica apenas quando são chamados.** Sendo também referidos com **functions(funções)**, -ERRADO-
 
+| Especificadores | tipos de dados | exemplo |
+| :--- | :--- | :---|
+| %s | _string_(texto) | Exibe textos |
+| %d | _int_/inteiro (`int, long, short, byte` | valores inteiros decimais |
+| %f | _float_/flutuante (float, double) | Número com casas decimais |
+| %c | _char_/caracter | Um único caracter apenas! |
+| %b | _bool_(boleano) | informa _true_ ou _false_ |
+| %n ou \n | _line break_ | Pula para a próxima linha |
+
+>Especificadores são diferentes de Operadores!!
+
 ```java
 import java.util.Scanner;
 
