@@ -5,6 +5,7 @@
 | `else` | Cláusula *Senão* | Executa um bloco de código alternativo caso a condição do `if` seja falsa (`false`). | `if (x > 5) { ... } else { println("Menor ou igual") }` |
 | `else if` | Condicional Encadeada | Permite avaliar uma nova condição em sequência caso o `if` anterior tenha sido falso. | `if (x > 10) { ... } else if (x > 5) { println("Entre 6 e 10") }` |
 | `condicao ? a : b` | Operador Ternário (Condicional) | Uma forma compacta de `if-else`. Avalia a condição: se for `true`, retorna `a`; se for `false`, retorna `b`. | `let status = (nota >= 7) ? "Aprovado" : "Reprovado"` |
+| `estrutura condicional 3/swtch case` |
 
 ### 🧠 Notas Mentais Importantes
 
@@ -15,6 +16,8 @@
 * **Operador Ternário vs. Elvis Operator:**
   * O operador com a sintaxe `? :` separado é o **Operador Ternário**.
   * O **Elvis Operator** legítimo (comum em linguagens como Kotlin, C# ou Groovy) utiliza a sintaxe `?:` (juntos) e serve para fornecer um valor padrão caso o operando seja nulo (ex: `val nome = usuario.nome ?: "Anónimo"`).
+  * **Switch case:**
+  * 
 ```java
 var canDrive = (age >= 18 || (age >=16 && isEmancipated);
 var message = canDrive ?
@@ -49,7 +52,64 @@ public class MainJava {
 
 ---
 
---- EXEMPLOS EM VÍDEO ---
+### Estrutura Condicional Switch Case
+
+O **`switch-case`** é uma estrutura de controle de fluxo utilizada para direcionar a execução do código para diferentes blocos de saída, baseando-se no valor exato de uma única expressão ou variável de entrada. (Uma opção de saída com base em uma entrada pré-definida)
+
+```java
+// Vai receber o valor de Um (1) à Sete (7), por aqui --- ENTRADA DE DADOS 
+var option = scanner.nextInt();
+
+// Saida com a condicional `switch` --- SAIDA DO RESULTADO
+switch (option){
+            case 1:
+                System.out.println("Domingo");
+                break;
+            case 2:
+                System.out.println("Segunda-feira");
+                break;
+            case 3:
+                System.out.println("Terceira-feira");
+                break;
+            case 4:
+                System.out.println("Quarta-feira");
+                break;
+            case 5:
+                System.out.println("Quinta-feira");
+                break;
+            case 6:
+                System.out.println("Sexta-feira");
+                break;
+            case 7:
+                System.out.println("Sábado");
+                break;
+            default:
+                System.out.println("Opção inserida inválida!");
+        }
+```
+
+* para o switch aceitar uma String, a variável de entrada é que precisa ser do tipo String. Os cases apenas refletem o tipo dessa variável.
+
+```java
+switch (option) // Variável de entrada (option){
+            case "1": // A entrada para que tenha esse input, tem que ser `string`
+                System.out.println("Domingo");
+                break; // Se não colocado o `break`, o Java continuará executando todos os códigos dos `cases`
+                       // de baixo de forma sequencial (comportamento chamado de *Fall-Through*), mesmo que eles não correspondam à variável de entrada.
+            case "2":
+                System.out.println("Segunda-feira");
+                break;
+                ...
+```
+
+⚠️ Atenção: A comparação de Strings no switch é case-sensitive (diferencia maiúsculas de minúsculas). Passar "**segunda**" é diferente de "**Segunda**".
+* **Obrigatoriedade:** Ele não é obrigatório para o código compilar, mas é indispensável para garantir que **apenas o resultado selecionado** seja executado.
+* **Variável de Entrada:** É a variável colocada dentro do `switch(variavel)`. O tipo dela define o que o código aceita.
+* **Valor de Comparação (`case`):** São os valores fixos que você testa. Se a variável for `int`, o case usa números (`case 1:`). Se a variável for `String`, o case usa aspas (`case "1":`).
+
+---
+
+### --- EXEMPLOS EM VÍDEO ---
 
 ```java
 import java.util.Scanner;
@@ -123,6 +183,92 @@ public class MainJava {
 
         // O método '.close()' encerra o objeto Scanner, liberando o recurso de memória do sistema.
         scanner.close();
+    }
+}
+```
+
+**DO SWITCH CASE v1.0.0**
+
+ ```java
+import java.util.Scanner;
+
+public class MainJava2 {
+
+    public static void main(String[] args){
+
+        var scanner = new Scanner(System.in);
+        System.out.println("Informe um número de 1 até 7");
+
+        var option = scanner.next();
+ 
+        switch (option){
+            case "carlos":
+                System.out.println("Domingo");
+                break;
+            case "2":
+                System.out.println("Segunda-feira");
+                break;
+            case "3":
+                System.out.println("Terceira-feira");
+                break;
+            case "4":
+                System.out.println("Quarta-feira");
+                break;
+            case "5":
+                System.out.println("Quinta-feira");
+                break;
+            case "6":
+                System.out.println("Sexta-feira");
+                break;
+            case "7":
+                System.out.println("Sábado");
+                break;
+            default:
+                System.out.println("Opção inserida inválida!");
+        }
+    }
+}
+```
+
+**SWITCH CASE v1.1.0**
+
+ ```java
+import java.util.Scanner;
+
+public class MainJava2 {
+
+    public static void main(String[] args){
+
+        var scanner = new Scanner(System.in);
+        System.out.println("Informe um número de 1 até 7");
+
+        var option = scanner.next();
+ 
+        switch (option){
+            case "carlos":
+                System.out.println("Domingo");
+                break;
+            case "2":
+                System.out.println("Segunda-feira");
+                break;
+            case "3":
+                System.out.println("Terceira-feira");
+                break;
+            case "4":
+                System.out.println("Quarta-feira");
+                break;
+            case "5":
+                System.out.println("Quinta-feira");
+                break;
+            case "6":
+                System.out.println("Sexta-feira");
+                break;
+            case "7":
+                System.out.println("Sábado");
+                break;
+            default:
+                System.out.println("Opção inserida inválida!");
+        }
     }
 }
 ```
