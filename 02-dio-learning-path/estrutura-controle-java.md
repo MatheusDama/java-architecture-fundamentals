@@ -56,12 +56,12 @@ import java.util.Scanner;
 
 public class MainJava {
 
-    public static void main (String[] args){
+    public static void main(String[] args) {
 
         // --- ENTRADA DE DADOS ---
 
-        // O construtor 'new Scanner(System.in)' cria um objeto para ler a entrada do usuário
-        // no console. O tipo 'var' permite que o Java infira o tipo automaticamente.
+        // O construtor 'new Scanner(System.in)' cria um objeto para ler a entrada do usuário no console.
+        // O tipo 'var' permite que o Java infira o tipo automaticamente.
         var scanner = new Scanner(System.in);
 
         System.out.println("Informe seu nome: ");
@@ -72,48 +72,53 @@ public class MainJava {
         int age = scanner.nextInt();
 
         System.out.println("Você é emancipado? (s/n)");
-
+        
         // --- VALIDAÇÃO COM IGNORE CASE ---
 
         // O método '.next()' captura a entrada do usuário como String.
-        // O método '.equalsIgnoreCase("s")' faz a comparação de igualdade textual de forma inteligente,
+        // O método '.equalsIgnoreCase("s")' faz a comparação de igualdade de forma inteligente,
         // ignorando se a letra digitada está em maiúscula ("S") ou minúscula ("s").
-        // Se o usuário digitar qualquer uma das duas opções, o retorno será verdadeiro (true).
         /* Exemplo visual:
            Usuário digita "S" -> "S".equalsIgnoreCase("s") -> true
            Usuário digita "s" -> "s".equalsIgnoreCase("s") -> true
            Usuário digita "n" -> "n".equalsIgnoreCase("s") -> false */
         var isEmancipated = scanner.next().equalsIgnoreCase("s");
 
-        // O método '.next()' captura a entrada do usuário como String.
-        // O método '.equals("s")' faz a comparação de igualdade textual de forma segura.
-        // Se o usuário digitar exatamente "s", o retorno será verdadeiro (true), caso contrário, falso (false).
-        // var isEmancipated = scanner.next().equals("s");
+        // --- PROCESSAMENTO E REGRAS DE NEGÓCIO ---
 
+        // Atribuição de uma expressão lógica para verificar se o usuário está apto a dirigir.
+        // Regra: Ter idade maior ou igual a 18 anos OU (ter entre 16 e 17 anos E ser emancipado).
+        /* Exemplo visual da lógica:
+           Idade: 16, Emancipado: true  -> (16 >= 18)[false] || (16 >= 16 && true)[true]  -> Resulta em true
+           Idade: 16, Emancipado: false -> (16 >= 18)[false] || (16 >= 16 && false)[false] -> Resulta em false */
+        var canDrive = (age >= 18) || (age >= 16 && isEmancipated);
 
-        // --- PROCESSAMENTO E CONDIÇÃO ---
+        // --- ATRIBUIÇÃO CONDICIONAL (OPERADOR TERNÁRIO) ---
 
-        // A estrutura condicional verifica as regras de negócio baseadas na idade e emancipação.
-        /* Regras lógicas:
-           - Se age >= 18: Pode dirigir.
-           - Se age entre 16 e 17 E for emancipado: Não pode dirigir (conforme lógica do bloco). */
-        if (age >= 18 || (age >=16 && isEmancipated)){
-            // O 'printf' exibe o texto formatado. Aqui usamos '%s' para Strings ou inteiros convertidos
-            // no texto e '%n' para quebrar a linha de forma independente do sistema operacional.
-            System.out.printf("%s, você tem %d anos e pode dirigir %n", name, age);
+        // O operador ternário `? :` funciona como um if-else compacto.
+        // Sintaxe: condicao ? valor_se_verdadeiro : valor_se_falso;
+        // Ele resolve o problema de escopo, permitindo criar e inicializar a variável na mesma linha.
+        var message = canDrive ? name + ", você pode dirigir." : name + ", você não pode dirigir.";
 
-        } /* else if (age >= 16 && isEmancipated) {
-            // O operador lógico '&&' representa o AND (E). Ambos os lados precisam ser verdadeiros
-            // (idade maior/igual a 16 E ser emancipado) para que o bloco seja executado.
-            // O caractere '\n' força a quebra de linha na saída de texto.
-            System.out.printf("%s, apesar de ter %s anos, você é emancipado e pode dirigir \n", name, age);
-            
-        } */ else {
-            System.out.printf("%s, você não pode dirigir \n", name);
-        }
+        // --- ESTRUTURA CONDICIONAL TRADICIONAL (Alternativa para logs detalhados) ---
+
+        /* // Nota mental sobre escopo: A variável 'messageDetaled' precisa ser declarada FORA do bloco if/else
+        // se quisermos utilizá-la mais abaixo no código, pois blocos `{}` isolam o ciclo de vida das variáveis.
+        String messageDetailed;
+
+        if (canDrive) {
+            // O 'printf' exibe o texto formatado. Usa '%s' para Strings, '%d' para inteiros e '%n' para quebrar a linha.
+            System.out.printf("%s, você tem %d anos e preenche os requisitos para dirigir! %n", name, age);
+            messageDetailed = name + ", você está autorizado.";
+        } else {
+            System.out.printf("%s, você tem %d anos e não cumpre os requisitos. %n", name, age);
+            messageDetailed = name + ", você não está autorizado.";
+        } 
+        */
 
         // --- SAÍDA DE DADOS E FINALIZAÇÃO ---
 
+        System.out.println(message);
         System.out.println("Fim da execução!");
 
         // O método '.close()' encerra o objeto Scanner, liberando o recurso de memória do sistema.
