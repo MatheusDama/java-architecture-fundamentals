@@ -35,23 +35,34 @@ import java.util.Scanner;
 
 public class MainJava {
 
-    public static void main (String[] args){
+    public static void main(String[] args) {
         var scanner = new Scanner(System.in);
+        
         System.out.println("Informe seu nome: ");
         var name = scanner.next();
+        
         System.out.println("Informe sua idade: ");
         int age = scanner.nextInt();
 
-        if (age >= 18) System.out.printf("%s, você tem %s anos e pode dirigir %n", name, age);
-        |____________________________________________________________________________________|
-           //A condição apenas é seguinda dentro dessa sequeência, sendo que o "System.out.printf" não afeta a condição.    
-
+        // ⚠️ COMPORTAMENTO CRÍTICO DE ESCOPO:
+        // Como o 'if' abaixo NÃO possui chaves '{}', apenas a primeira instrução 
+        // imediatamente seguinte (o System.out.printf) está condicionada a ele.
+        if (age >= 18) 
+            System.out.printf("%s, você tem %d anos e pode dirigir.%n", name, age);
+        
+        // Esta linha abaixo está FORA do 'if'. Ela NÃO é afetada pela condição 
+        // e será executada SEMPRE, independentemente de a idade ser maior ou menor que 18.
         System.out.println("Fim da execução!");
 
         scanner.close();
     }
 }
 ```
+🧠 Explicação Teórica para o seu Markdown
+
+   💡 Nota sobre o fluxo de execução: > Quando omitimos as chaves {} em uma instrução condicional, o compilador do Java associa apenas a linha de código subsequente ao bloco do if.
+
+*  A quebra de linha ou o recuo (indentação) no código são puramente visuais para o desenvolvedor; o Java lê o ponto e vírgula ; para encerrar a instrução condicionada. Portanto, a mensagem "Fim da execução!" segue o fluxo normal do programa (sequencial) e ignora o estado da variável age.
 
 ---
 
