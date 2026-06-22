@@ -107,6 +107,8 @@ switch (option) // Variável de entrada (option){
 * **Variável de Entrada:** É a variável colocada dentro do `switch(variavel)`. O tipo dela define o que o código aceita.
 * **Valor de Comparação (`case`):** São os valores fixos que você testa. Se a variável for `int`, o case usa números (`case 1:`). Se a variável for `String`, o case usa aspas (`case "1":`).
 
+Podemos fazer uma atribuição do `switch-case`, ele fica atrelado a uma variável, podendo assim ser utilizado para retorno de valor.
+
 ---
 
 ### --- EXEMPLOS EM VÍDEO ---
@@ -268,6 +270,38 @@ public class MainJava2 {
                 break;
             default:
                 System.out.println("Opção inserida inválida!");
+        }
+    }
+}
+```
+
+**Switch Case v1.2.1**
+
+```java
+import java.util.Scanner;
+
+public class MainJava2 {
+
+    public static void main(String[] args){
+
+        var scanner = new Scanner(System.in);
+        System.out.println("Informe um número de 1 até 7");
+
+        var option = scanner.nextInt();
+
+        // O `switch/case` usando o arrow, não é necessitando usar o break, que esse formato já encerra
+        // a sequência do código.
+        switch (option){
+            case 1, 7 -> System.out.println("Fim de semana uhuuu \\o/");
+            case 2 -> System.out.println("Segunda-feira");
+            case 3 -> System.out.println("Terça-feira");
+            case 4 -> System.out.println("Quarta-feira");
+            case 5 -> System.out.println("Quinta-feira");
+            case 6 -> System.out.println("Sexta-feira");
+
+            // `default` volta uma mensagem pré-definida, para que caso haja um erro, seja exibido essa mensagem.
+
+            default -> System.out.println("Opção inválida");
         }
     }
 }
