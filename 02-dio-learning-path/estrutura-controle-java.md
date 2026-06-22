@@ -1,11 +1,14 @@
 
 | Palavra reservada / Sintaxe | Nome Técnico | Função / Explicação | Exemplo de Uso |
 | :--- | :--- | :--- | :--- |
-| `if` | Instrução Condicional (*Se*) | Desvia o fluxo de execução do programa com base numa condição booleana. | `if (x > 5) { println("Maior") }` |
-| `else` | Cláusula *Senão* | Executa um bloco de código alternativo caso a condição do `if` seja falsa (`false`). | `if (x > 5) { ... } else { println("Menor ou igual") }` |
-| `else if` | Condicional Encadeada | Permite avaliar uma nova condição em sequência caso o `if` anterior tenha sido falso. | `if (x > 10) { ... } else if (x > 5) { println("Entre 6 e 10") }` |
-| `condicao ? a : b` | Operador Ternário (Condicional) | Uma forma compacta de `if-else`. Avalia a condição: se for `true`, retorna `a`; se for `false`, retorna `b`. | `let status = (nota >= 7) ? "Aprovado" : "Reprovado"` |
-| `estrutura condicional 3/swtch case` |
+| `if` | Instrução Condicional (*Se*) | Desvia o fluxo de execução do programa com base numa condição booleana. | `if (x > 5) { System.out.println("Maior"); }` |
+| `else` | Cláusula *Senão* | Executa um bloco de código alternativo caso a condição do `if` seja falsa (`false`). | `if (x > 5) { ... } else { System.out.println("Menor ou igual"); }` |
+| `else if` | Condicional Encadeada | Permite avaliar uma nova condição em sequência caso o `if` anterior tenha sido falso. | `if (x > 10) { ... } else if (x > 5) { System.out.println("Entre 6 e 10"); }` |
+| `condicao ? a : b` | Operador Ternário (Condicional) | Uma forma compacta de `if-else`. Avalia a condição: se for `true`, retorna `a`; se for `false`, retorna `b`. | `String status = (nota >= 7) ? "Aprovado" : "Reprovado";` |
+| `switch (var) { case a -> ... }` | Estrutura Condicional Switch Case | Direciona a execução para diferentes blocos baseando-se no valor exato de uma única variável de entrada pré-definida. | `switch(option) { case 1 -> "Domingo"; default -> "Inválido"; }` |
+| `for (init; cond; inc)` | Laço de Repetição (*Loop For*) | Executa um bloco de código repetidamente enquanto a condição declarada for verdadeira. | `for (int i = 0; i < 10; i++) { System.out.println(i); }` |
+| `break` | Interrupção de Fluxo Total | Aborta e encerra imediatamente a execução de um bloco `switch` ou de um laço de repetição. | `if (name.equalsIgnoreCase("exit")) break;` |
+| `continue` | Interrupção de Fluxo Parcial | Pula o restante do código da rodada atual e força o laço a ir direto para a próxima iteração. | `if (i % 2 == 0) continue;` |
 
 ### 🧠 Notas Mentais Importantes
 
