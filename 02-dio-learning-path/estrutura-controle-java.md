@@ -131,6 +131,130 @@ System.out.println(message);
 
 ## Estrutura de repetição `for`
 
+```java
+import java.util.Scanner;
+
+public class MainJava3 {
+    public static void main(String[] args) {
+        var scanner = new Scanner(System.in);
+
+        int i = 2; // Variável declarada no escopo do método principal
+        for (; i < 100; i++) {
+            System.out.println(i); 
+            // O espaço de inicialização do for fica vazio (;), pois 'i' já foi criado.
+        }
+        // 💡 Vantagem: 'i' continua acessível aqui fora após o fim do loop.
+        System.out.println("Valor final de i: " + i); 
+        scanner.close();
+    }
+}
+```
+* Podemos criar verificações internas para sinalizar quando o loop atingiu exatamente o seu limite. O código abaixo executa até o número 100, exibe uma mensagem customizada no console (CLI) e encerra usando o break.
+
+```java
+import java.util.Scanner;
+
+public class MainJava3 {
+    public static void main(String[] args) {
+        var scanner = new Scanner(System.in);
+
+        for (var i = 1; i <= 100; i++) {
+            if (i == 100) {
+                System.out.println("Fim da execução");
+                break; // Interrompe o laço imediatamente
+            }
+            System.out.println(i);
+        }
+        scanner.close();
+    }
+}
+```
+
+* O comando break aborta a repetição assim que uma condição específica é atendida, ignorando a regra de parada principal do laço e saindo do bloco imediatamente.
+
+```java
+import java.util.Scanner;
+
+public class MainJava3 {
+    public static void main(String[] args) {
+        var scanner = new Scanner(System.in);
+
+        for (var i = 1; i <= 100; i++) {
+            if (i == 90) {
+                break; // Interrompe e sai do 'for' quando i for igual a 90
+            }
+            System.out.println(i); // Imprime apenas de 1 até 89
+        }
+        // O fluxo do programa continua aqui após o corte
+        System.out.println("Processo encerrado no corte.");
+        scanner.close();
+    }
+}
+```
+nesse caso o break vai literalmente interromper quando chegar no 90, encerrando assim as atividades do processo(fluxo) e sai do operação for.
+
+```java
+    public static void main(String[] args){
+
+        var scanner = new Scanner(System.in);
+
+        for (var i = 2; i <= 100; i +=2){
+
+            System.out.println(i);break;
+        }
+    }
+}
+```
+
+* Não precisamos nos limitar a somar de 1 em 1 (i++). É possível controlar o "passo" lógico da repetição para criar sequências crescentes ou decrescentes customizadas com atribuições compostas.
+
+```java
+for (var i = 2; i <= 100; i += 2) {
+    System.out.println(i); // Imprime diretamente os números pares crescentes (2, 4, 6... 100)
+}
+```
+* Forma Crescente (Exemplo em Pares: i += 2)
+
+```java
+import java.util.Scanner;
+
+public class MainJava3 {
+    public static void main(String[] args){
+        var scanner = new Scanner(System.in);
+
+        // Contagem decrescente de 100 até 0
+        for (var i = 100; i >= 0; i--) {
+            System.out.println(i);
+        }
+        scanner.close();
+    }
+}
+// 💡 Dica de Manutenção: Para subtrair pulando de 2 em 2 (em pares), basta usar: i -= 2
+```
+* Enquanto o break cancela o laço por completo, o comando continue apenas interrompe a iteração atual (pula a rodada). Ele faz o Java ignorar todas as linhas que estão abaixo dele e saltar diretamente para a próxima verificação/incremento do for.
+
+```Java
+import java.util.Scanner;
+
+public class MainJava3 {
+    public static void main(String[] args) {
+        var scanner = new Scanner(System.in);
+
+        for (var i = 0; i <= 100; i++) {
+            if (i % 2 == 0) {
+                continue; // Se o número for par, pula o println abaixo e vai direto para o i++
+            }
+            System.out.println(i); // Imprime apenas números ímpares
+        }
+        scanner.close();
+    }
+}
+```
+
+⚠️ Atenção ao Escopo e Posicionamento: O System.out.println(i) deve ficar obrigatoriamente após a verificação do if (continue). Se for colocado antes, o valor será exibido no console antes de ser filtrado, anulando o efeito do desvio.
+
+---
+
 
 
 
@@ -391,7 +515,7 @@ public class MainJava {
 }
 ```
 
-**Repetição for**
+**Repetição for 1.0.0**
 
 ```java
 import java.util.Scanner;
