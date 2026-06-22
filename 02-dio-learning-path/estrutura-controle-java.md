@@ -129,6 +129,10 @@ var message = switch (option) {
 System.out.println(message);
 ```
 
+## Estrutura de repetição `for`
+
+
+
 
 ---
 
@@ -386,3 +390,48 @@ public class MainJava {
     }
 }
 ```
+
+**Repetição for**
+
+```java
+import java.util.Scanner;
+
+public class MainJava3 {
+
+    public static void main(String[] args) {
+
+        // --- CONFIGURAÇÃO DA ENTRADA ---
+        var scanner = new Scanner(System.in);
+
+        // --- ESTRUTURA DE REPETIÇÃO (LOOP FOR) ---
+
+        // Sintaxe básica do for dividida em 3 partes:
+        // 1. Inicialização ('var i = 1'): Cria a variável de controle do fluxo.
+        // 2. Condição de Continuidade ('i < 100'): O laço continuará rodando ENQUANTO essa condição for verdadeira.
+        // 3. Incremento ('i++'): Adiciona +1 à variável 'i' a cada rodada (iteração) do ciclo.
+        for (var i = 1; i < 100; i++) {
+            
+            System.out.println("Digite um nome (ou digite 'exit' para sair): ");
+            var name = scanner.next();
+
+            // --- INTERRUPÇÃO DE FLUXO (BREAK) ---
+
+            // O comando 'break' serve para quebrar o loop imediatamente, sem esperar a condição 'i < 100' falhar.
+            // Se o usuário digitar "exit", "EXIT" ou "eXiT", o programa interrompe o laço e pula para fora dele.
+            if (name.equalsIgnoreCase("exit")) {
+                System.out.println("Comando de saída detectado...");
+                break; 
+            }
+
+            // --- SAÍDA DE DADOS DE CADA CICLO ---
+            System.out.println("Nome digitado: " + name);
+            System.out.println("------------------------------");
+        }
+
+        // --- FINALIZAÇÃO ---
+        System.out.println("Loop encerrado com sucesso. Fim da execução!");
+        scanner.close();
+    }
+}
+```
+
