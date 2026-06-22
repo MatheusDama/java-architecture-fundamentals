@@ -110,7 +110,7 @@ switch (option) // Variável de entrada (option){
 * **Variável de Entrada:** É a variável colocada dentro do `switch(variavel)`. O tipo dela define o que o código aceita.
 * **Valor de Comparação (`case`):** São os valores fixos que você testa. Se a variável for `int`, o case usa números (`case 1:`). Se a variável for `String`, o case usa aspas (`case "1":`).
 
-Podemos fazer uma atribuição do `switch-case`, ele fica atrelado a uma variável, podendo assim ser utilizado para retorno de valor.
+* Podemos fazer uma atribuição do `switch-case`, ele fica atrelado a uma variável, podendo assim ser utilizado para retorno de valor.
 
 ```java
 var message = switch (option) {
@@ -191,7 +191,7 @@ public class MainJava3 {
     }
 }
 ```
-nesse caso o break vai literalmente interromper quando chegar no 90, encerrando assim as atividades do processo(fluxo) e sai do operação for.
+* nesse caso o break vai literalmente interromper quando chegar no 90, encerrando assim as atividades do processo(fluxo) e sai do operação for.
 
 ```java
     public static void main(String[] args){
