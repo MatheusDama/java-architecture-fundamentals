@@ -109,6 +109,24 @@ switch (option) // Variável de entrada (option){
 
 Podemos fazer uma atribuição do `switch-case`, ele fica atrelado a uma variável, podendo assim ser utilizado para retorno de valor.
 
+```java
+var message = switch (option) {
+    case 1, 7 -> {
+        var day = option == 1 ? "Domingo" : "Sábado";
+        
+        // O yield captura o resultado final e o "embuti" na variável 'message'
+        yield "Hoje é " + day; 
+    }
+    // --- RESTO DO CÓDIGO --
+    // ... ... ... ... ... ...
+    default -> "Opção inválida";
+};
+
+// O programa NÃO parou! Ele continua rodando aqui embaixo normalmente:
+System.out.println(message);
+```
+
+
 ---
 
 ### --- EXEMPLOS EM VÍDEO ---
@@ -303,6 +321,65 @@ public class MainJava2 {
 
             default -> System.out.println("Opção inválida");
         }
+    }
+}
+```
+
+**Switch Case v1.2.2**
+
+```java
+import java.util.Scanner;
+
+public class MainJava {
+
+    public static void main(String[] args) {
+
+        // --- ENTRADA DE DADOS ---
+
+        // O construtor 'new Scanner(System.in)' cria um objeto para ler a entrada do usuário no console.
+        var scanner = new Scanner(System.in);
+
+        System.out.println("Digite um número de 1 a 7 para escolher o dia da semana: ");
+        // O método '.nextInt()' captura o próximo valor numérico inteiro inserido pelo usuário.
+        var option = scanner.nextInt();
+        scanner.nextLine(); // Boa prática: limpa o buffer do teclado após ler um número inteiro.
+
+        // --- PROCESSAMENTO (SWITCH EXPRESSION) ---
+
+        // O 'switch' como expressão permite atribuir o resultado direto a uma variável.
+        // O uso da seta (->) elimina a necessidade do comando 'break', pois esse formato já encerra
+        // a sequência de execução automaticamente após encontrar o caso correspondente.
+        var message = switch (option) {
+            // É possível agrupar múltiplos valores na mesma linha separados por vírgula.
+            case 1, 7 -> {
+                // Operador ternário para definir dinamicamente se é Domingo ou Sábado.
+                // A expressão 'option == 1' gera uma condição: se for verdadeira (true), adota o valor
+                // à esquerda do ':' ("Domingo"). Se for falsa (false), adota o valor à direita ("Sábado").
+                var day = option == 1 ? "Domingo" : "Sábado";
+
+                // O método '.formatted()' aplica a interpolação de Strings na mensagem de fim de semana.
+                // Substitui os marcadores '%s' pelas variáveis passadas nos argumentos na ordem correta.
+                // A palavra-chave 'yield' é usada dentro de blocos '{}' para retornar o valor final para a variável 'message'.
+                yield "Hoje é %s, fim de semana uhuull \\o/".formatted(day);
+            }
+            case 2 -> "Segunda-feira";
+            case 3 -> "Terça-feira";
+            case 4 -> "Quarta-feira";
+            case 5 -> "Quinta-feira";
+            case 6 -> "Sexta-feira";
+
+            // O 'default' é obrigatório no switch expression para garantir que todos os cenários possíveis
+            // (inclusive entradas inválidas) retornem um valor.
+            default -> "Opção inválida";
+        }; // Ponto e vírgula obrigatório aqui, pois estamos finalizando a atribuição da variável 'message'.
+
+        // --- SAÍDA DE DADOS E FINALIZAÇÃO ---
+
+        System.out.println(message);
+        System.out.println("Fim da execução!");
+
+        // O método '.close()' encerra o objeto Scanner, liberando o recurso de memória do sistema.
+        scanner.close();
     }
 }
 ```
