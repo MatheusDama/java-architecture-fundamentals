@@ -611,3 +611,49 @@ public class MainJava3 {
 }
 ```
 
+```java
+import java.util.Scanner;
+
+public class MainJava3 {
+
+    public static void main(String[] args){
+        var scanner = new Scanner(System.in);
+
+        //string vazia
+        var name = "exit";
+        do {
+            System.out.println("Informe um nome");
+            name = scanner.next();
+            System.out.println(name);
+
+        } while (!name.equalsIgnoreCase("exit"));
+    }
+}
+```
+
+```java
+import java.util.Scanner;
+
+public class MainJava3 {
+
+    public static void main(String[] args){
+        var scanner = new Scanner(System.in);
+
+        //string vazia
+        var name = "exit";
+        // O `while` vai verificar se a condição foi atendida, assim executando o programa.
+        // O `do while` primeiro executal, e depois faz a verificação
+        while (!name.equalsIgnoreCase("exit")) {
+            System.out.println("Informe um nome");
+            name = scanner.next();
+            System.out.println(name);
+
+        }
+    }
+}
+```
+
+```java
+
+```
+
