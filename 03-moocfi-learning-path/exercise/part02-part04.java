@@ -28,6 +28,7 @@ public class Averaging {
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------
 
+//Aqui faz o chamado dos ademais métodos, que pode resultar em um triangulo.
 
 public class StarSign {
 
