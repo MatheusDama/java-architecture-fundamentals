@@ -25,3 +25,66 @@ public class Averaging {
         System.out.println("Average: " + result);
     }
 }
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+public class StarSign {
+
+    public static void main(String[] args) {
+
+        
+        //The tests are not checking the main, so you can modify it freely.
+        //NB: If the tests don't seem to pass, you should try the methods here
+        //in the main to make sure they print the correct shapes!
+        
+        printStars(3);
+        System.out.println("\n---");  // printing --- between the shapes
+        printSquare(4);
+        System.out.println("\n---");
+        printRectangle(5, 6);
+        System.out.println("\n---");
+        printTriangle(3);
+        System.out.println("\n---");
+    }
+
+    public static void printStars(int number) {
+        // first part of the exercise
+        int initial = 0;
+        while (initial < number) {
+            System.out.print("*");
+            initial++;
+        }
+        System.out.println("");
+    }
+
+    public static void printSquare(int size) {
+        // second part of the exercise
+        //h = height e l = lenght/ Altura e largura, me sequência;
+        for (int h = 1; h <= size; h++){
+            for (int l = 1; l<= size; l++){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void printRectangle(int width, int height) {
+        // third part of the exercise
+        for (int h = 1; h <= height; h++){
+            for(int w = 1; w <= width; w++){
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+
+    //Não peguei como funciona, mas vamos lá...
+
+    public static void printTriangle(int size) {
+        // fourth part of the exercise
+        for (int h = 1; h <= size; h++){
+            printStars(h);
+        }
+    }
+}
